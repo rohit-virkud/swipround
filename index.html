@@ -812,7 +812,12 @@ color: inherit;
 
 
 
-
+const getSize = (width, heightPercentage) => {
+    return `${Math.min(
+      (width * window.innerWidth) / 100,
+      (window.innerHeight * heightPercentage) / 100
+    )}px`;
+  };
 
     function sizes()
     {
