@@ -711,7 +711,7 @@ color: inherit;
 </style>
 
 </head>
-<body>
+<body onload="sizes()">
 
 
 	<div class="share-slide" id="share-slide" style="border: none;">
@@ -740,7 +740,7 @@ color: inherit;
 <!-- Swiper -->
 <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        <div class="swiper-slide"><p class="px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -775,7 +775,7 @@ color: inherit;
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.   </div>
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  </p> </div>
         <div class="swiper-slide">Slide 2</div>
       </div>
     </div>
@@ -814,265 +814,11 @@ color: inherit;
 
 
 
-    function swipenext(selector)
+    function sizes()
     {
-    	
-
-    	 $(".swiper-wrapper").css('transform', 'translate3d(-980px, 0px, 0px)' );
-         $(".swiper-wrapper").css('transition-duration', '0ms' );
-
-         $(".one").addClass('swiper-slide-prev');
-         $(".one").css('transform', 'translate3d(200px, 0px, -1500px) rotateX(0deg) rotateY(-100deg)' );
-         $(".one").css('z-index', '0' );
-         $(".one").css('transition-duration', '900ms' );
-
         
-        
-  
-
-
-         $(".two").removeClass('swiper-slide-next');
-         $(".two").addClass('swiper-slide-active');
-         $(".two").css('transform','translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg)' );
-         $(".two").css('z-index', '1' );
-         $(".two").css('transition-duration', '900ms' );
-         $(".swiper-slide-shadow-right").css('opacity','0');
-         $(".swiper-slide-shadow-right").css('transition-duration','0ms');
-
-
-    
-  
-  
-         
+        document.getElementById("px").style.fontSize = getSize(5,2.5);
     }
- 
-  
-
-  	$(".fscreen-gallery").fadeOut();
-  	$(".image-01-fscreengallery").fadeOut();
-  	$(".image-02-fscreengallery").fadeOut();
-  	$(".image-03-fscreengallery").fadeOut();
-  	$(".image-04-fscreengallery").fadeOut();
-
-
-
-   
-    
-
-  	  setInterval(function () {
-
-  	  	if (swiper.activeIndex === 0) {
-        $(".slide-02-img-img").addClass("zoomOut");
-      } else {
-        $(".slide-02-img-img").removeClass("zoomOut");
-      }
-
-
-      if (swiper.activeIndex === 1) {
-        $(".imgs").addClass("zoomOut");
-      } else {
-        $(".imgs").removeClass("zoomOut");
-      }
-
-    }, 1000);
-
-  	function swipeNext()
-  	{
-  		$(".fscreen-gallery").fadeIn();
-  		$(".image-01-fscreengallery").fadeIn('fast');
-  		$(".image-01-fs").addClass('zoomOut');
-  	} 
-
-  	function imageOneOpen()
-  	{
-  		$(".fscreen-gallery").css('z-index','1');
-  		$(".fscreen-gallery").fadeIn();
-  		
-  		$(".image-01-fscreengallery").fadeIn();
-  		$(".image-01-fs").addClass('zoomOut');
-
-  	} 
-  	function imageTwoOpen()
-  	{
-  		$(".fscreen-gallery").css('z-index','1');
-  		$(".fscreen-gallery").fadeIn();
-  		$(".image-02-fscreengallery").fadeIn();
-  		$(".image-02-fs").addClass('zoomOut');
-  	} 
-  	function imageThreeOpen()
-  	{
-  		$(".fscreen-gallery").css('z-index','1');
-  		$(".fscreen-gallery").fadeIn();
-  		$(".image-03-fscreengallery").fadeIn();
-  		$(".image-03-fs").addClass('zoomOut');
-  	} 
-  	function imageFourOpen()
-  	{
-  		$(".fscreen-gallery").css('z-index','1');
-  		$(".fscreen-gallery").fadeIn();
-  		$(".image-04-fscreengallery").fadeIn();
-  		$(".image-04-fs").addClass('zoomOut');
-  	} 
-
-
-  	function arrownext(e)
-  	{
-
-           if(e===1)
-           {
-
-           	$(".image-02-fscreengallery").fadeIn(500,"linear");
-           	$(".image-01-fscreengallery").fadeOut(800,"linear")
-  		    $(".image-01-fs").delay(800).removeClass('zoomOut');
-  		    $(".image-02-fs").delay(800).addClass('zoomOut');
-           }
-           if(e===2)
-           {
-           		$(".image-03-fscreengallery").fadeIn(500,"linear");
-           	$(".image-02-fscreengallery").fadeOut(800,"linear")
-           
-  		    $(".image-02-fs").removeClass('zoomOut');
-  		    $(".image-03-fs").addClass('zoomOut');
-           }
-           if(e===3)
-           {
-           	$(".image-04-fscreengallery").fadeIn(800,"linear");
-           	$(".image-03-fscreengallery").fadeOut(800,"linear")
-           	
-  		    $(".image-03-fs").removeClass('zoomOut');
-  		    $(".image-04-fs").addClass('zoomOut');
-           }
-           if(e===4)
-           {
-           		$(".image-01-fscreengallery").fadeIn(800,"linear");
-           	$(".image-04-fscreengallery").fadeOut(800,"linear")
-           
-  		    $(".image-04-fs").removeClass('zoomOut');
-  		    $(".image-01-fs").addClass('zoomOut');
-           }
-  	}
-
-
-  	function arrowprev(e)
-  	{
-  		 if(e===1)
-           {
-
-           	$(".image-01-fscreengallery").fadeOut(800,"linear");
-  		    $(".image-04-fscreengallery").fadeIn(800,"linear");
-  		    $(".image-01-fs").removeClass('zoomOut');
-  		    $(".image-04-fs").addClass('zoomOut');
-  		 
-           }
-
-           if(e===2)
-           {
-  		    $(".image-02-fscreengallery").fadeOut(800,"linear");
-  		    $(".image-01-fscreengallery").fadeIn(800,"linear")
-  		    $(".image-02-fs").removeClass('zoomOut');
-  		    $(".image-01-fs").addClass('zoomOut');
-           }
-           if(e===3)
-           {
-  		    $(".image-03-fscreengallery").fadeOut(800,"linear");
-  		    $(".image-02-fscreengallery").fadeIn(800,"linear")
-  		    $(".image-03-fs").removeClass('zoomOut');
-  		    $(".image-02-fs").addClass('zoomOut');
-           }
-           if(e===4)
-           {
-  		    $(".image-04-fscreengallery").fadeOut(800,"linear");
-  		    $(".image-03-fscreengallery").fadeIn(800,"linear")
-  		    $(".image-04-fs").removeClass('zoomOut');
-  		    $(".image-03-fs").addClass('zoomOut');
-           }
-  	}
-  	
-
-  	function closegallery()
-  	{
-  		$(".fscreen-gallery").fadeOut('slow');
-  		$(".image-01-fscreengallery").fadeOut();
-  		$(".image-02-fscreengallery").fadeOut();
-  		$(".image-03-fscreengallery").fadeOut();
-  		$(".image-04-fscreengallery").fadeOut();
-  		$(".image-01-fs").removeClass('zoomOut');
-  		$(".image-02-fs").removeClass('zoomOut');
-  		$(".image-03-fs").removeClass('zoomOut');
-  		$(".image-04-fs").removeClass('zoomOut');
-  	} 
-
-  	function openSlide() {
-    $(".share-slide").addClass("open")
-    $(".icon-grid").addClass("open").delay(500);
-    $(".share-headline").addClass("open").delay(500);
-    $(".scan-and-save-txt").addClass("open").delay(500);
-    $(".qr-code-container").addClass("open").delay(500);
-    $(".close-icon").removeClass("closeAnim");
-
-    }
-
-    function closeSlide() {
-    $(".share-slide").removeClass("open")
-    $(".icon-grid").removeClass("open").delay(500);
-    $(".share-headline").removeClass("open").delay(500);
-    $(".scan-and-save-txt").removeClass("open").delay(500);
-    $(".qr-code-container").removeClass("open").delay(500);
-    $(".close-icon").addClass("closeAnim").delay(1000);
-    }
-
-
-
-  	  function translator()
-  	  {
-
-  	  	var x=document.getElementById("key").innerText;
-
-  	  	if(x === "GRE")
-  	  	{
-  	  	document.getElementById("key").innerHTML = "ENG";
-  	  	document.getElementById("name").innerHTML = "ΓΕΩΡΓΙΟΣ ΠΑΡΙΣΗΣ";
-  	  	$(".para-gre").removeClass("none");
-  	  	$(".para").addClass("none");
-  	  	
-  	  	$(".gre-txt").removeClass("none");
-  	  	$(".eng-txt").addClass("none");
-
-
-  	   }else
-  	   {
-
-  	   	$(".para-gre").addClass("none");
-  	   	$(".para").removeClass("none");
-  	  	
-
-        $(".gre-txt").addClass("none");
-  	  	$(".eng-txt").removeClass("none");
-
-        document.getElementById("key").innerHTML = "GRE";
-  	   	document.getElementById("name").innerHTML = "Georgios Parisis";
-  	  	document.getElementById("para").innerHTML = "Welcome to Anastazia Luxury Suites & Spa a modern and recently renovated Hotel in the North cosmopolitan suburbs of Athens, in Drosia (borderline Drosia – Ekali).                                                                                                                                                   For whatever reason you may be traveling, the Anastazia Luxury Suites & Rooms is the ideal abode for both those who visit Athens due to their professional obligations and for those who want to holiday near Athens and combine direct contact with the cultural, historical, religious and entertaining attractions but also have a sense of recreation away from the bustle of the capital's center.";
-
-  	   }
-  	  }
-
-
-  	  function play2() { 
-        
-        var audioElement = document.getElementById("audio");
-            
-            if (audioElement.paused) {
-                    /* Audio link for notification */ 
-                audioElement.play(); 
-                
-            }
-            else {
-                
-                audioElement.pause(); 
-                
-            }
-
-    } 
 
 
 </script>
